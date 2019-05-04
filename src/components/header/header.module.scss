@@ -1,0 +1,35 @@
+.header {
+    margin-bottom: 50px;
+    h1 {
+        a {
+            color: #000;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+    }
+
+    li {
+        text-decoration: none;
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        color: #a19f9f;
+        &:hover {
+            color: #666666;
+        }
+    }
+
+    .active-nav-item {
+        color: #333333;
+    }
+}
