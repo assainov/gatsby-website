@@ -1,24 +1,19 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import { format } from 'date-fns'
 
+import Head from '../components/head'
 import Layout from '../components/layout'
 import styles from './blog.module.scss'
 
 export default () => {
     const data = useStaticQuery(graphql`
         query {
-            allMarkdownRemark {
+            allContentfulBlogPost (sort: { fields: publishedDate, order: DESC }) {
                 edges {
                     node {
-                        frontmatter {
-                            title
-                            date
-                        }
-                        excerpt(pruneLength: 80)
-                        fields {
-                            slug
-                        }
+                        title
+                        slug
+                        publishedDate (formatString: "MMMM Do, YYYY")
                     }
                 }
             }
@@ -27,18 +22,19 @@ export default () => {
 
     return (
         <Layout>
+            <Head title="Blog" />
             <ol className={styles.posts}>
-                {data.allMarkdownRemark.edges.map(edge => (
+                {data.allContentfulBlogPost.edges.map(edge => (
                     <li>
                         <h2>
-                            <Link to={`/blog/${edge.node.fields.slug}`}>
-                                {edge.node.frontmatter.title}
+                            <Link to={`/blog/${edge.node.slug}`}>
+                                {edge.node.title}
                             </Link>
                         </h2>
                         <p className={styles.date}>{
-                            format(new Date(edge.node.frontmatter.date), 'MMMM Do, YYYY')
+                            edge.node.publishedDate
                         }</p>
-                        <p>{edge.node.excerpt}</p>
+                        {/*<p>{edge.node.excerpt}</p>*/}
                     </li>
                 ))}
             </ol>
