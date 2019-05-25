@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: 'Destination Dev ' + String.fromCharCode(10148),
-        author: 'Ilyas A.'
+        title: 'weblogger.io',
+        author: 'Ilyas Assainov'
     },
     plugins: [
         'gatsby-plugin-sass',
@@ -27,6 +27,29 @@ module.exports = {
                     }
                 ]
             }
+        },
+        {
+            resolve: "gatsby-plugin-react-svg",
+            options: {
+                rule: {
+                    include: /assets/
+                }
+            }
+        },
+        {
+            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            options: {
+                fonts: [
+                    {
+                        family: `Montserrat`,
+                        variants: [`400`],
+                    },
+                    {
+                        family: `Merriweather`,
+                        variants: [`400`],
+                    }
+                ],
+            },
         }
     ]
 }

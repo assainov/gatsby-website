@@ -1,6 +1,12 @@
 .header {
-    margin-bottom: 50px;
-    h1 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+
+    h2 {
+        font-size: var(--logo-font-size);
         a {
             color: #000;
         }

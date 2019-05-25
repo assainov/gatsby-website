@@ -1,0 +1,25 @@
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 75px 0;
+}
+
+.dropdown {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    padding: 0 25px 5px 5px;
+}
+
+.sorting {
+    position: relative;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
