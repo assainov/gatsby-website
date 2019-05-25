@@ -1,16 +1,20 @@
+html {
+  height: auto;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Merriweather', sans-serif;
+  font-family: 'Muli', sans-serif;
 }
 
 :root {
   --header-height: 75px;
-  --logo-font-size: 16px; 
-  --container-width: 90%;
+  --logo-font-size: 20px; 
+  --container-width: 85%;
 
-  --paragraph: 16px;
+  --paragraph: 20px;
   --small: 13px;
   --primary-color: #000;
   --secondary-color: #696969;
@@ -23,7 +27,7 @@
 }
 
 h1, h2, h3, h4, h5, h6, select {
-  font-family: 'Montserrat', serif;
+  line-height: 1.5;
 }
 
 a {
@@ -35,6 +39,8 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  border-radius: 0;
+  font-size: inherit;
 }
 
 select::-ms-expand {

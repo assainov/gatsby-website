@@ -3,6 +3,8 @@ import { Link } from 'gatsby'
 import styles from './article-list.module.scss'
 import ToggleButton from 'react-toggle-button'
 import Arrow from '../../assets/icons/arrow-down.svg'
+import Moon from '../../assets/icons/moon.svg'
+import Sun from '../../assets/icons/sun.svg'
 import ArticleCard from '../article-card'
 
 export default () => {
@@ -28,8 +30,13 @@ export default () => {
                     <Arrow className={styles.dropdownArrow} />
                 </div>
                 <ToggleButton
-                    activeLabel={''}
-                    inactiveLabel={''}
+                    activeLabel={<Moon style={{transform: 'translateY(-1px)'}} />}
+                    inactiveLabel={<Sun style={{transform: 'translateY(-1px)'}} />}
+                    containerStyle={{width:'72px'}} 
+                    trackStyle={{width:'72px'}} 
+                    thumbAnimateRange={[1, 44]} 
+                    activeLabelStyle={{ width:'40px' }} 
+                    inactiveLabelStyle={{ width:'40px' }}
                     colors={{
                         activeThumb: {
                           base: 'rgb(0, 0, 0)',
@@ -44,8 +51,18 @@ export default () => {
                           base: 'rgb(0, 0, 0)',
                         }
                     }}
-                    thumbStyle={{borderRadius: '2px', border: '1px solid #FFF'}}
-                    trackStyle={{borderRadius: '2px', border: '1px solid var(--primary-color)'}}
+                    thumbStyle={{
+                        borderRadius: '2px', 
+                        border: '1px solid #FFF',
+                        height: '28px',
+                        width: '28px'
+                    }}
+                    trackStyle={{
+                        borderRadius: '2px', 
+                        border: '1px solid var(--primary-color)',
+                        height: '30px',
+                        width: '72px'
+                    }}
                     value={ darkModeOn }
                     onToggle={(value) => {
                         setDarkMode(!value)

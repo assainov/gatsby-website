@@ -1,11 +1,13 @@
 .hero {
-    position: relative;
+    position: fixed;
     height: calc(100vh - var(--header-height));
+    width: inherit;
+    z-index: -1;
 
     h1, h2 {
+        font-weight: 400;
         font-size: var(--paragraph);
-        line-height: 1.5;
-        margin-bottom: 20px;
+        margin-bottom: 28px;
     }
 
     h1 {

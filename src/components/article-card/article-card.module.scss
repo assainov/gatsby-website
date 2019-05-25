@@ -2,7 +2,9 @@
     border-radius: var(--global-border-radius);
     overflow: hidden;
     box-shadow: var(--box-shadow);
-    margin-bottom: 50px;
+    &:not(:last-child) {
+        margin-bottom: 50px;
+    }
 }
 
 .image {
